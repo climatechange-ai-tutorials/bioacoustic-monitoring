@@ -10,7 +10,7 @@ Originally presented at NeurIPS 2023
 
 View the poster [here](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1-FHYqaY4Y0vA0P3lvcyINFDFlKWuKMw4%2Fview%3Fusp%3Ddrive_link).
 
-**Deprecation Warning**: The code in this notebook is unmaintained by the authors, but they've produced similar (and upgraded!) functionality, avialable via the [Perch-Hoplite repository](https://github.com/google-research/perch-hoplite). Additionally, many of the techniques in this tutorial are described in more detail in their paper, The [Search for Squawk: Agile Modeling in Bioacoustics](https://arxiv.org/abs/2505.03071).
+**Deprecation Warning**: The code in this notebook is unmaintained by the authors, but they've produced similar (and upgraded!) functionality, available via the [Perch-Hoplite repository](https://github.com/google-research/perch-hoplite). Additionally, many of the techniques in this tutorial are described in more detail in their paper, The [Search for Squawk: Agile Modeling in Bioacoustics](https://arxiv.org/abs/2505.03071).
 
 ## Access this tutorial
 
