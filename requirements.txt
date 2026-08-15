@@ -1,0 +1,73 @@
+# Requirements for: Agile Modeling for Bioacoustic Monitoring
+#
+# Verified working on Google Colab, July 2026:
+#   Python      3.12.13
+#   TensorFlow  2.20.0
+#   NumPy       2.0.2
+#   Accelerator T4 GPU (the tutorial also completes on CPU)
+#
+# ---------------------------------------------------------------------------
+# ON GOOGLE COLAB (the intended environment)
+# ---------------------------------------------------------------------------
+# Most of the packages below ship with the Colab runtime already. The notebook's
+# install cell is the authoritative setup and needs only:
+#
+#   pip install git+https://github.com/google-research/perch-hoplite.git \
+#               ml-collections codecarbon
+#
+# Restart the runtime afterwards (Runtime > Restart session).
+#
+# ---------------------------------------------------------------------------
+# OUTSIDE COLAB
+# ---------------------------------------------------------------------------
+# Requires Python >=3.10,<3.15 and the system libraries libsndfile1 and ffmpeg:
+#
+#   sudo apt-get install libsndfile1 ffmpeg
+#   pip install -r requirements.txt
+#
+# ---------------------------------------------------------------------------
+
+# Core: the agile modeling workflow (embedding, vector search, active learning).
+# Installed from git because the PyPI release lags the notebook APIs used here.
+perch-hoplite @ git+https://github.com/google-research/perch-hoplite.git
+
+# Configuration objects used by perch-hoplite. Not always present on a fresh
+# Colab runtime, so it is installed explicitly.
+ml-collections>=0.1.1
+
+# Energy and carbon emissions measurement.
+codecarbon>=2.3.0
+
+# ---------------------------------------------------------------------------
+# Pulled in by perch-hoplite, listed for reproducibility outside Colab.
+# ---------------------------------------------------------------------------
+tensorflow>=2.20,<3.0
+numpy>=2.0,<3.0
+kagglehub>=0.3.13          # downloads the pre-trained model from Kaggle Models
+etils[epath]>=1.5.0
+librosa>=0.10.1
+matplotlib>=3.6.1
+pandas>=2.1.1
+scikit-learn>=1.3.0        # PCA and t-SNE for the final visualization
+ipywidgets>=8.1            # the interactive labeling interface
+tqdm>=4.6
+
+# ---------------------------------------------------------------------------
+# NOTES
+# ---------------------------------------------------------------------------
+# 1. GPU is optional. Only the embedding step benefits meaningfully; every other
+#    step runs comfortably on CPU.
+#
+# 2. `kagglehub` may warn that a newer version is available. The warning is
+#    harmless and the model downloads correctly. It is deliberately not pinned
+#    to 1.x, which was not part of the verified configuration.
+#
+# 3. The original 2023 version of this tutorial installed `perch` (formerly
+#    `chirp`) at a pinned commit. That package can no longer be installed: it
+#    requires Python <3.12, and its dependencies are mutually unsatisfiable
+#    (flax needs numpy>=1.26 while numba needs numpy<1.25). `perch-hoplite` is
+#    the maintained replacement from the same team.
+#
+# 4. Audio and the pre-trained model download automatically from public sources
+#    (Google Cloud Storage and Kaggle Models). No Google Drive access, no
+#    credentials, and no manual setup are required.

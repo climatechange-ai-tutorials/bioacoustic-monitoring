@@ -6,13 +6,16 @@ Authors (Equal Contribution):
 * Rob Laber, Google Cloud, roblaber@google.com
 * Tom Denton, Google Research, tomdenton@google.com
 
-Originally presented at NeurIPS 2023
+Revised by:
+*   Tariq Shahzad, COMSATS University Islamabad, tariqshahzadd@gmail.com
 
-View the poster [here](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1-FHYqaY4Y0vA0P3lvcyINFDFlKWuKMw4%2Fview%3Fusp%3Ddrive_link).
+Originally presented at NeurIPS 2023 (view the poster [here](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1-FHYqaY4Y0vA0P3lvcyINFDFlKWuKMw4%2Fview%3Fusp%3Ddrive_link))
+
+Revised for 2026 Summer School
 
 ## Access this tutorial
 
-We recommend executing this notebook in a Colab environment to gain access to GPUs and to manage all necessary dependencies. <a target="_blank" href="https://colab.research.google.com/github/climatechange-ai-tutorials/bioacoustic-monitoring/blob/main/%5BSharable%5D_CCAI_Agile_Modeling_for_Bioacoustic_Monitoring_Tutorial.ipynb">
+We recommend executing this notebook in a Colab environment to gain access to GPUs and to manage all necessary dependencies. <a target="_blank" href="https://colab.research.google.com/github/climatechange-ai-tutorials/bioacoustic-monitoring/blob/main/Agile_Modeling_for_Bioacoustic_Monitoring.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
@@ -33,20 +36,19 @@ Usage of this tutorial is subject to the MIT License.
 ## Cite
 
 ### Plain Text
-Hamer, J., Laber, R., & Denton, T. (2023). Agile Modeling for Bioacoustic Monitoring [Tutorial]. In Conference on Neural Information Processing Systems. Climate Change AI. https://doi.org/10.5281/zenodo.11585179
+Hamer, J., Laber, R., Denton, T., & Shahzad, T. (2026). Agile Modeling for Bioacoustic Monitoring [Tutorial]. In Climate Change AI Summer School. Climate Change AI. https://doi.org/10.5281/zenodo.21955055
 
 ### BibTeX
 
 ```
-@misc{hamer2023agile,
+@misc{hamer2026agile,
   title={Agile Modeling for Bioacoustic Monitoring},
-  author={Hamer, Jenny and Laber, Rob and Denton, Tom},
-  year={2023},
+  author={Hamer, Jenny and Laber, Rob and Denton, Tom and Shahzad, Tariq},
+  year={2026},
   organization={Climate Change AI},
   type={Tutorial},
-  doi={https://doi.org/10.5281/zenodo.11585179},
-  booktitle={Conference on Neural Information Processing Systems},
+  doi={https://doi.org/10.5281/zenodo.21955055},
+  booktitle={Climate Change AI Summer School},
   howpublished={\url{https://github.com/climatechange-ai-tutorials/bioacoustic-monitoring}}
 }
 ```
-
