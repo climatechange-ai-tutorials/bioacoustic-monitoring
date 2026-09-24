@@ -13,6 +13,8 @@ Originally presented at NeurIPS 2023 (view the poster [here](https://colab.resea
 
 Revised for 2026 Summer School
 
+**Deprecation Warning**: The code in this notebook is unmaintained by the authors, but they've produced similar (and upgraded!) functionality, available via the [Perch-Hoplite repository](https://github.com/google-research/perch-hoplite). Additionally, many of the techniques in this tutorial are described in more detail in their paper, The [Search for Squawk: Agile Modeling in Bioacoustics](https://arxiv.org/abs/2505.03071).
+
 ## Access this tutorial
 
 We recommend executing this notebook in a Colab environment to gain access to GPUs and to manage all necessary dependencies. <a target="_blank" href="https://colab.research.google.com/github/climatechange-ai-tutorials/bioacoustic-monitoring/blob/main/Agile_Modeling_for_Bioacoustic_Monitoring.ipynb">
