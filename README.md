@@ -21,6 +21,31 @@ We recommend executing this notebook in a Colab environment to gain access to GP
 
 Estimated time to execute end-to-end: 45 minutes 
 
+## Beyond the notebook: batch inference and review
+
+The repository also includes optional tools for using a classifier you trained in the notebook on new recordings. The notebook works without them. Full details are in [README_EXTENDED.md](README_EXTENDED.md).
+
+1. **Install** (not needed for the notebook itself):
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. **Save your classifier.** The notebook's "Show the metrics" cell writes it to `<db_path>/agile_classifier.pt`. On Colab, download that file.
+3. **Run batch inference** on a local folder, an `s3://` or `gs://` bucket, or a public Google Drive folder:
+   ```bash
+   python -m src.pipeline --input gs://chirp-public-bucket/soundscapes/powdermill/ --classifier agile_classifier.pt
+   ```
+   This writes `outputs/predictions_manifest.csv` (one row per file) and `outputs/review_queue.csv` (files with confidence below `--threshold`, default 0.75). Corrupted or unreadable files are marked `status=error`, and the rest of the batch continues.
+4. **Review uncertain clips in the dashboard**:
+   ```bash
+   streamlit run app.py
+   ```
+   Choose the source and threshold, then run the batch. Listen to each queued clip and save the correct label. Verified labels go to `outputs/verified_labels.csv`.
+5. **Retrain.** In the notebook, before "Prepare the labeled data", load the verified labels into the database and train as usual:
+   ```python
+   from src.utils import ingest_verified_labels
+   ingest_verified_labels('verified_labels.csv', db, dataset_name='powdermill')
+   ```
+
 ## Contribute to this tutorial
 
 Please refer to these [GitHub instructions](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project#about-forking) to open a pull request via the "fork and pull request" workflow. 
