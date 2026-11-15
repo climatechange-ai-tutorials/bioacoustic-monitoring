@@ -53,6 +53,18 @@ ipywidgets>=8.1            # the interactive labeling interface
 tqdm>=4.6
 
 # ---------------------------------------------------------------------------
+# Extended tooling: batch pipeline (src/) and Streamlit app (app.py).
+# Not needed by the notebook. See README_EXTENDED.md.
+# ---------------------------------------------------------------------------
+soundfile>=0.12            # reads .wav / .flac (needs libsndfile1)
+streamlit>=1.37            # dashboard; >=1.37 for st.audio end_time
+fsspec>=2023.6.0           # cloud object storage abstraction
+s3fs>=2023.6.0             # s3:// sources
+gcsfs>=2023.6.0            # gs:// sources
+gdown>=5.1                 # public Google Drive folders
+pytest>=7.0
+
+# ---------------------------------------------------------------------------
 # NOTES
 # ---------------------------------------------------------------------------
 # 1. GPU is optional. Only the embedding step benefits meaningfully; every other
