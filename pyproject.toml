@@ -4,25 +4,38 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bioacoustic-agile"
-version = "0.1.0"
-description = "Agile modeling and active learning utilities for bioacoustic species identification."
+version = "0.2.0"
+description = "Batch inference, multi-source ingestion and active-learning review for the agile bioacoustic modeling tutorial."
 readme = "README.md"
 authors = [
     { name = "Climate Change AI Tutorials Team" }
 ]
 license = { text = "MIT" }
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
-    "numpy>=1.21.0",
-    "scikit-learn>=1.0.0",
-    "joblib>=1.1.0",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "soundfile>=0.12",
+    "scipy>=1.10",
 ]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
+# The tutorial's embedding backbone (Perch v8). Needed to actually run inference.
+model = [
+    "perch-hoplite @ git+https://github.com/google-research/perch-hoplite.git",
+    "librosa>=0.10.1",
 ]
+cloud = ["fsspec>=2023.6.0", "s3fs>=2023.6.0", "gcsfs>=2023.6.0"]
+gdrive = ["gdown>=5.1"]
+app = ["streamlit>=1.37"]
+all = ["bioacoustic-agile[model,cloud,gdrive,app]"]
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0"]
+
+[project.scripts]
+bioacoustic-batch = "src.pipeline:main"
+
+[tool.setuptools]
+packages = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
